@@ -106,4 +106,33 @@ public class SortedMass {
 
         return resMass;
     }
+
+    //надо доработать
+    public static int[] quickSort(int[] mass, int start, int end) {
+        int[] resMass = mass.clone();
+        if (start >= end) return resMass;
+        int i = start;
+        int j = end;
+
+        int op = i - (i - j) / 2;
+
+        while (i < j) {
+            while ((i < op) && (resMass[i] <= resMass[op])) i++;
+            while ((j > op) && (resMass[j] >= resMass[op])) j--;
+
+            if (i < j) {
+                int temp = mass[i];
+                mass[i] = mass[j];
+                mass[j] = temp;
+
+                if (i == op) op = j;
+                else if (j == op) op = i;
+            }
+        }
+
+        quickSort(resMass, start, op);
+        quickSort(resMass, op + 1, end);
+
+        return resMass;
+    }
 }

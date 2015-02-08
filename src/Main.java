@@ -15,12 +15,14 @@ public class Main {
         int[] insertion = SortedMass.insertionSort(mas);
         int[] shake=SortedMass.sheycerSort(mas);
         int[] shell=SortedMass.shellSort(mas);
+        //int[] quick=SortedMass.quickSort(mas, 0,mas.length-1);
 
         consoleWriter(bubble);
         consoleWriter(select);
         consoleWriter(insertion);
         consoleWriter(shake);
         consoleWriter(shell);
+        //consoleWriter(quick);
 
     }
 
